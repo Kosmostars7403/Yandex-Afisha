@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 class Place(models.Model):
     title = models.CharField(max_length=200, verbose_name='Название')
@@ -11,8 +12,12 @@ class Place(models.Model):
         return self.title
 
 class Image(models.Model):
-    title = models.ForeignKey(Place, on_delete=models.CASCADE)
+    place = models.ForeignKey(Place, on_delete=models.CASCADE)
     file = models.ImageField(upload_to='places_images')
 
     def __str__(self):
-        return '{} {}'.format(self.pk, self.title)
+        return '{} {}'.format(self.pk, self.place)
+
+
+    def get_absolute_image_url(self):
+        return self.file.url
