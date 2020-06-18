@@ -10,6 +10,9 @@ class Place(models.Model):
     def __str__(self):
         return self.title
 
+class Image(models.Model):
+    title = models.ForeignKey(Place, on_delete=models.CASCADE)
+    file = models.ImageField(upload_to='places_images')
 
-
-
+    def __str__(self):
+        return '{} {}'.format(self.pk, self.title)
