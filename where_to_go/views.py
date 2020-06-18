@@ -2,6 +2,7 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404
 from django.template import loader
 from places.models import Place, Image
+from django.urls import reverse
 import json
 
 def index(request):
@@ -23,7 +24,7 @@ def index(request):
             "properties": {
                 "title": place.title,
                 "placeId": place.pk,
-                "detailsUrl": '/places/{}'.format(place.pk)
+                "detailsUrl": reverse('places', args=[place.pk])
             }
         }
         context['places_geojson']['features'].append(place_geo)
