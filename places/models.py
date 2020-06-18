@@ -14,9 +14,10 @@ class Place(models.Model):
 class Image(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     file = models.ImageField(upload_to='places_images')
+    position = models.PositiveSmallIntegerField(verbose_name='Позиция')
 
     def __str__(self):
-        return '{} {}'.format(self.pk, self.place)
+        return '{} {}'.format(self.position, self.place)
 
 
     def get_absolute_image_url(self):
