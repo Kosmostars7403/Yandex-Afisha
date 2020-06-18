@@ -22,8 +22,8 @@ def index(request):
             },
             "properties": {
                 "title": place.title,
-                "placeId": "moscow_legends",
-                "detailsUrl": "{% static 'places/moscow_legends.json' %}"
+                "placeId": place.pk,
+                "detailsUrl": '/places/{}'.format(place.pk)
             }
         }
         context['places_geojson']['features'].append(place_geo)
