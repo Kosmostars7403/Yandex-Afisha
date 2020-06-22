@@ -4,7 +4,7 @@ Cайт о самых интересных местах в Москве.
 
 ![&#x41A;&#x443;&#x434;&#x430; &#x43F;&#x43E;&#x439;&#x442;&#x438;](.gitbook/assets/site.png)
 
-[Демка сайта](https://devmanorg.github.io/where-to-go-frontend/).
+[Демка сайта](http://kosmostars7403.pythonanywhere.com).
 
 ## Как запустить
 
