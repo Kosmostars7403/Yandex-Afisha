@@ -10,7 +10,7 @@ class ImageInline(SortableInlineAdminMixin, admin.TabularInline):
     extra = 0
 
     def preview(self, image):
-        url = image.get_absolute_image_url()
+        url = image.file.url
         return format_html('<img src="{}" height={} />', url, 200)
 
     fields = ('position', 'file', 'preview')

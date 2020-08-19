@@ -14,7 +14,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         url = options['url']
         response = requests.get(url)
-        response.raise_for_status
+        response.raise_for_status()
         response = response.json()
 
         place = Place.objects.create(title=response['title'], description_short=response['description_short'],
