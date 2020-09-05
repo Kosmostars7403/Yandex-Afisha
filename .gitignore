@@ -17,6 +17,7 @@ insta_images/
 images/
 config/
 .DS_Store
+__pycache__
 
 # C extensions
 *.so
